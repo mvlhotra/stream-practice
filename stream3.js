@@ -1,11 +1,7 @@
-function getAndPrintHTMLChunks(){
+function getAndPrintHTMLChunks(options){
     const https = require('https'); 
-    const requestOptions = {
-        host: 'sytantris.github.io',
-        path: '/http-examples/step2.html'
-      };
     let myData = '';
-    https.get(requestOptions, function (stream) {
+    https.get(options, function (stream) {
        stream.setEncoding('utf8');
        stream.on('data', function (chunk) {
         myData += chunk + "\n";
@@ -17,5 +13,10 @@ function getAndPrintHTMLChunks(){
     return;
 }
 
-getAndPrintHTMLChunks();
+const requestOptions = {
+    host: 'sytantris.github.io',
+    path: '/http-examples/step3.html'
+  };
+
+getAndPrintHTMLChunks(requestOptions);
 
