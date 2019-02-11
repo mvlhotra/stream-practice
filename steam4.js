@@ -24,4 +24,3 @@ const requestOptions = {
   };
 
 getHTML(requestOptions,printHTML);
-
